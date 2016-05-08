@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog - Renato K. Araujo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/height.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        <div id="content" class="col-md-8">
+            <h3>小阪 Renato Blog</h3>
+
+            {{#postsPage.content}}
+                <div class="post-summary">
+                    <h2>{{title}} <small>- {{formattedPublishedAt}}</small></h2>
+                    <p>{{{summaryContent}}}</p>
+                    <a href="{{url}}" class="btn-custom btn-post">Continue Reading</a>
+                </div>
+            {{/postsPage.content}}
+
+            <nav>
+                <ul class="pager">
+                    {{#postsPage.hasNext}}
+                        <li class="previous"><a href="/?page={{postsPage.nextPageable.pageNumber}}"><span aria-hidden="true">&larr;</span> Older</a></li>
+                    {{/postsPage.hasNext}}
+                    {{#postsPage.hasPrevious}}
+                        <li class="next"><a href="/?page={{postsPage.previousPageable.pageNumber}}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                    {{/postsPage.hasPrevious}}
+                </ul>
+            </nav>
+        </div>
+
+        <div id="side" class="col-md-4">
+            {{> inc/side}}
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>

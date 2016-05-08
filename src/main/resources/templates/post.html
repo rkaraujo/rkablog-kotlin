@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{post.title}}</title>
+    <meta name="description" content="{{post.pageDescription}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/css/height.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        <div id="content" class="col-md-8">
+            <h2 id="post-title">{{post.title}} <small>- {{post.formattedPublishedAt}}</small></h2>
+            <div id="post-content">
+                {{{post.content}}}
+            </div>
+            <a href="/index.html" class="btn-custom btn-post">Back to Blog Index</a>
+        </div>
+
+        <div id="side" class="col-md-4">
+            {{> inc/side}}
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
