@@ -13,7 +13,7 @@ data class Post(
         var createdAt: Date = Date(),
 
         @Column(name = "published_at")
-        var publishedAt: Date? = Date(),
+        var publishedAt: Date? = null,
 
         @Column(name = "slug_title")
         var slugTitle: String = "",
@@ -30,6 +30,11 @@ data class Post(
         @GeneratedValue
         var id: Int = 0
 ) {
+
+    @PreUpdate
+    fun onPreUpdate() {
+        updatedAt = Date()
+    }
 
     fun getFormattedPublishedAt(): String {
         val sdf = SimpleDateFormat("MMM dd, yyyy")

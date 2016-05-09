@@ -7,6 +7,8 @@ import software.renato.kotlin.rkablog.model.Post
 
 interface PostRepository : CrudRepository<Post, Int> {
 
+    fun findAll(pageable: Pageable): Page<Post>
+
     fun findByPublishedAtIsNotNull(pageable: Pageable): Page<Post>
 
     fun findBySlugTitleAndPublishedAtIsNotNull(slugTitle: String): Post
