@@ -12,10 +12,10 @@ import software.renato.kotlin.rkablog.repository.PostRepository
 import software.renato.kotlin.rkablog.util.slugfy
 import java.util.*
 
+const val PAGE_SIZE = 25
+
 @Controller
 class AdminController @Autowired constructor(val postRepository: PostRepository) {
-
-    val PAGE_SIZE = 25
 
     @RequestMapping(value = "/admin/index.html", method = arrayOf(RequestMethod.GET))
     fun index(@RequestParam(name = "page", required = false) page: Integer?, model: Model): String {

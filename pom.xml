@@ -11,11 +11,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.M2</version>
+        <version>1.4.0.M3</version>
     </parent>
 
     <properties>
-        <kotlin.version>1.0.1-2</kotlin.version>
+        <kotlin.version>1.0.2</kotlin.version>
     </properties>
 
     <repositories>

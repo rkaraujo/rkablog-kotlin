@@ -9,11 +9,11 @@ import software.renato.kotlin.rkablog.controller.interceptor.LoginInterceptor
 @Configuration
 open class WebConfig : WebMvcConfigurerAdapter() {
 
-    override fun addViewControllers(registry: ViewControllerRegistry?) {
-        registry?.addViewController("/login.html")?.setViewName("login")
+    override fun addViewControllers(registry: ViewControllerRegistry) {
+        registry.addViewController("/login.html").setViewName("login")
     }
 
-    override fun addInterceptors(registry: InterceptorRegistry?) {
-        registry?.addInterceptor(LoginInterceptor())?.addPathPatterns("/login.html")
+    override fun addInterceptors(registry: InterceptorRegistry) {
+        registry.addInterceptor(LoginInterceptor()).addPathPatterns("/login.html")
     }
 }
